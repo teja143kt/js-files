@@ -1,0 +1,21 @@
+//Polymorphism
+
+class marks{
+    getdetails(){
+        return"90marks";
+    }
+}
+class assignmentmarks extends marks{
+    getdetails(){
+        return"70marks";
+    }
+}
+class textmarks extends marks{
+    getdetails(){
+        return"35marks";
+    }
+}
+
+const student = [new marks(),new assignmentmarks(),new textmarks()] ;
+
+student.forEach(element => console.log(element.getdetails()));
