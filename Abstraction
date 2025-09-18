@@ -1,0 +1,36 @@
+// Task 2: Abstraction
+// Hide student’s internal details (like marks) and expose only methods to interact.
+
+class student {
+    #marks; // private property
+
+    constructor(name, marks) {
+        this.name = name;
+        this.#marks = marks;
+    }
+
+     // Public method to get marks
+    getMarks() {
+        return this.#marks;
+    }
+
+    // Public method to set marks
+    updateMarks(newMarks) {
+        if (newMarks >=0 && newMarks <=100) {
+            this.#marks = newMarks;
+        } else {
+            console.log("Invalid marks. Must be between 0 and 100.");
+        }
+    }
+
+
+    // Public method to display student info
+    displayInfo() {
+        console.log(`Name: ${this.name}, Marks: ${this.#marks}`);
+    }
+}
+const s1 = new student("Aliaa", 85);
+s1.displayInfo();
+
+s1.updateMarks(90);
+console.log(`Updated Marks:${s1.getMarks()}`);
